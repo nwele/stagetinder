@@ -7,7 +7,7 @@ class Router {
 		$this->getURI();
 	}
 	private function getURI() {
-		$uri = str_replace("/website_stage/stagetinder/","",$_SERVER["REQUEST_URI"]);
+		$uri = str_replace($GLOBALS["config"]["root"], "",$_SERVER["REQUEST_URI"]);
 		$uri = str_replace("/", "_", $uri);
 		
 		if($uri == ""){
